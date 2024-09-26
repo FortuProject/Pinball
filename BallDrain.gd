@@ -1,12 +1,12 @@
 extends Area2D
 
-@export var launch_force: float = 900.0  # Force applied to the ball
-var ball: RigidBody2D = null  # Placeholder for the ball
+@export var launch_force: float = 900.0  # Initial Force applied to the ball
+var ball: RigidBody2D = null  # Placeholder for the ball, as the ball is a RigidBody2D. Done to import the object in Godot4. 
 
-# Counter for the total number of balls left (starts at 3)
+# Counter for the total number of balls left (starts at 3) counts down with each ball drain, and up by 1 every multiball activation. 
 var ball_counter: int = 3
 
-# Reference to the original ball (assigned when the game starts)
+# Reference to the original ball (assigned when the game starts) There are multiple balls, this one denotaes "origional" so it will not vanish from the scene, unlike the multiball generated balls which vanish upon draining. 
 var original_ball: RigidBody2D = null
 
 # List to store the instantiated balls
